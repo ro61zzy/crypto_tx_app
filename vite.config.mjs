@@ -1,6 +1,7 @@
-const { defineConfig } = require('vite');
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-module.exports = defineConfig({
+export default defineConfig({
   plugins: [react()],
   define: {
     "process.env": {},
@@ -21,5 +22,6 @@ module.exports = defineConfig({
   },
   optimizeDeps: {
     include: ["buffer"],
+    exclude: ["fsevents"], // Add this line
   },
 });
